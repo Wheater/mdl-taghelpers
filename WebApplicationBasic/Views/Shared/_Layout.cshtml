@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WebApplicationBasic</title>
-
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/material-design-lite/material.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -16,15 +16,16 @@
     </environment>
 </head>
 <body>
+
     
     @RenderBody()
         
+    <mdl-script defer></mdl-script>
+
     <environment names="Development">
-        <script src="~/material-design-lite/material.js" asp-append-version="true"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">        
-        <script src="~/lib/material-design-lite/material.min.js" asp-append-version="true"></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 
