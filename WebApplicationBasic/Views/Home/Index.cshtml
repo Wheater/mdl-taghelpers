@@ -2,12 +2,28 @@
     ViewData["Title"] = "Demo Page";
 }
 
+@*
+
+<!-- Typography -->
 <mdl-h1 class="my-custom-class">Light 112sp</mdl-h1>
 <mdl-h2>Regular 56sp</mdl-h2>
 <mdl-h3>Regular 45sp</mdl-h3>
 <mdl-h4>Regular 34sp</mdl-h4>
 <mdl-headline>Regular 24sp</mdl-headline>
 <mdl-title>Regular 20sp</mdl-title>
+
+<!-- Badges -->
+<mdl-badge value="4" icon="true" href="http://google.com" >account_box</mdl-badge>
+
+<!-- Button -->
+<mdl-button mini="true" icon="true" accent="true" ripple="true" raised="true">account_box</mdl-button>
+<mdl-button mini="true"  accent="true" ripple="false">account_box</mdl-button>
+
+<!-- Tooltip -->
+<mdl-button id="test">Test Button</mdl-button>
+<mdl-tooltip right="true" for="test">TESTING</mdl-tooltip>
+
+*@
 
 @section scripts {
 }
