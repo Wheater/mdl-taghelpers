@@ -5,7 +5,7 @@ using System;
 namespace MDL.TagHelpers.Buttons
 {
     [HtmlTargetElement("mdl-button")] 
-    public class ButtonTagHelper : TagHelper
+    public class ButtonTagHelper : TagHelper, HasRipple
     {
         public bool Raised { get; set; }
         public bool Fab { get; set; }
