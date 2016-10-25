@@ -24,7 +24,7 @@ namespace MDL.TagHelpers.Buttons
 
         public override async void Process(TagHelperContext context, TagHelperOutput output)
         {
-            var content = await output.GetChildContentAsync();
+            var content = await output.InnerContent();
 
             // Switch the tag if they have an Icon, Link or Other. 
             output.TagName = "button";
@@ -55,11 +55,11 @@ namespace MDL.TagHelpers.Buttons
             if(Icon) {
                 output.AppendClass("mdl-button--icon");
                 output.Content.SetHtmlContent(
-                    "<i class=\"material-icons\">"+content.GetContent()+"</i>"
+                    "<i class=\"material-icons\">"+content+"</i>"
                 );
             }
             else {
-                output.Content.SetContent(content.GetContent());
+                output.Content.SetContent(content);
             }
 
         }

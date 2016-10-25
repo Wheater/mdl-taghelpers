@@ -10,10 +10,10 @@ namespace MDL.TagHelpers.Typography
         public override async void Process(TagHelperContext context, TagHelperOutput output)
         {
             output.TagName = "h2";
-            var content = await output.GetChildContentAsync();
+            var content = await output.InnerContent();
 
             output.AppendClass("mdl-typography--display-3");
-            output.Content.SetContent(content.GetContent());
+            output.Content.SetContent(content);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace MDL.TagHelpers.Badges
 
         public override async void Process(TagHelperContext context, TagHelperOutput output)
         {
-            var content = await output.GetChildContentAsync();
+            var content = await output.InnerContent();
 
             // Switch the tag if they have an Icon, Link or Other. 
             if(String.IsNullOrEmpty(Href)) {
@@ -61,7 +61,7 @@ namespace MDL.TagHelpers.Badges
             
             output.AppendClass("mdl-badge");
             output.Attributes.SetAttribute("data-badge", Value);
-            output.Content.SetContent(content.GetContent());
+            output.Content.SetContent(content);
         }
     }
 }

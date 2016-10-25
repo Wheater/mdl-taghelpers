@@ -1,24 +1,12 @@
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using System;
+using System.Threading.Tasks;
+
 namespace MDL.TagHelpers.API
 {
     public static class TagHelperOutputExtensions
     {
         public static void PrependClass(this TagHelperOutput output, string cssClass) {
-            string classValue;
-            if (output.Attributes.ContainsName("class"))
-            {
-                classValue = string.Format("{0} {1}", output.Attributes["class"].Value, cssClass);
-            }
-            else
-            {
-                classValue = cssClass;
-            }
-
-            output.Attributes.SetAttribute("class", classValue);
-        }
-
-        public static void AppendClass(this TagHelperOutput output, string cssClass) {
             string classValue;
             if (output.Attributes.ContainsName("class"))
             {
@@ -32,11 +20,25 @@ namespace MDL.TagHelpers.API
             output.Attributes.SetAttribute("class", classValue);
         }
 
+        public static void AppendClass(this TagHelperOutput output, string cssClass) {
+            string classValue;
+            if (output.Attributes.ContainsName("class"))
+            {
+                classValue = string.Format("{0} {1}", output.Attributes["class"].Value, cssClass);
+            }
+            else
+            {
+                classValue = cssClass;
+            }
+
+            output.Attributes.SetAttribute("class", classValue);
+        }
+
         public static void AddMaterialIconClass(this TagHelperOutput output) {
             output.AppendClass("material-icons");
         }
 
-        public static string Id(this TagHelperOutput output)
+        public static string SetId(this TagHelperOutput output)
         {
             if (output.Attributes.ContainsName("id"))
             {
@@ -50,13 +52,12 @@ namespace MDL.TagHelpers.API
 
         public static string UniqueId()
         {
-            return "md-" + Guid.NewGuid().ToString("N");
+            return Guid.NewGuid().ToString("N");
         } 
 
-        // public static string Content(this TagHelperOutput output) {
-        //     return output.Content.IsModified ? output.Content.GetContent() :
-        //         (await output.GetChildContentAsync()).GetContent();
-
-        // }
+        public static async Task<string> InnerContent(this TagHelperOutput output) {
+             return output.Content.IsModified ? output.Content.GetContent() :
+                 (await output.GetChildContentAsync()).GetContent();
+        }
     }
 }

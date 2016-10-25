@@ -22,7 +22,7 @@ namespace MDL.TagHelpers.Tooltips
 
         public override async void Process(TagHelperContext context, TagHelperOutput output)
         {
-            var content = await output.GetChildContentAsync();
+            var content = await output.InnerContent();
 
             // Switch the tag if they have an Icon, Link or Other. 
             output.TagName = "div";
@@ -49,7 +49,7 @@ namespace MDL.TagHelpers.Tooltips
                 
             output.PrependClass("mdl-tooltip");
 
-            output.Content.SetContent(content.GetContent());
+            output.Content.SetContent(content);
 
         }
     }
