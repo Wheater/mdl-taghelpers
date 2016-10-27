@@ -52,7 +52,7 @@ namespace MDL.TagHelpers.API
 
         public static string UniqueId()
         {
-            return Guid.NewGuid().ToString("N");
+            return "mdl-" + Guid.NewGuid().ToString("N");
         } 
 
         public static async Task<string> InnerContent(this TagHelperOutput output) {

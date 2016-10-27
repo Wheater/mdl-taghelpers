@@ -6,7 +6,6 @@ namespace MDL.TagHelpers
     [HtmlTargetElement("mdl-script")] 
     public class MdlTagHelper : TagHelper
     {
-        public bool Async { get; set; }
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             output.TagName = "script";
