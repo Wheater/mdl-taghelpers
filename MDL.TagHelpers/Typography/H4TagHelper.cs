@@ -1,18 +1,16 @@
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using MDL.TagHelpers.API;
 using System.Threading.Tasks;
+using System;
 
 namespace MDL.TagHelpers.Typography
 {
-    [HtmlTargetElement("mdl-h4")] 
-    public class H4TagHelper : TagHelper
+    [HtmlTargetElement(H4)]
+    [Mdl("h4", "mdl-typography--display-1")]
+    public class H4TagHelper : BaseTagHelper
     {
-        public override async void Process(TagHelperContext context, TagHelperOutput output)
+        public override void GenerateOutput(TagHelperOutput output, string content)
         {
-            output.TagName = "h4";
-            var content = await output.InnerContent();
-
-            output.AppendClass("mdl-typography--display-1");
             output.Content.SetContent(content);
         }
     }

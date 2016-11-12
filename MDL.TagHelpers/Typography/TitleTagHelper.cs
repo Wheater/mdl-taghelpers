@@ -4,15 +4,12 @@ using System.Threading.Tasks;
 
 namespace MDL.TagHelpers.Typography
 {
-    [HtmlTargetElement("mdl-title")] 
-    public class TitleTagHelper : TagHelper
+    [HtmlTargetElement(TITLE)] 
+    [Mdl("h6", "mdl-typography--title")]
+    public class TitleTagHelper : BaseTagHelper
     {
-        public override async void Process(TagHelperContext context, TagHelperOutput output)
+        public override void GenerateOutput(TagHelperOutput output, string content)
         {
-            output.TagName = "h6";
-            var content = await output.InnerContent();
-
-            output.AppendClass("mdl-typography--title");
             output.Content.SetContent(content);
         }
     }

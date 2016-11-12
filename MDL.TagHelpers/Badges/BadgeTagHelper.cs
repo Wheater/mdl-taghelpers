@@ -5,38 +5,27 @@ using System;
 namespace MDL.TagHelpers.Badges
 {
     [HtmlTargetElement("mdl-badge")] 
-    public class BadgeTagHelper : TagHelper
+    public class BadgeTagHelper : BaseTagHelper
     {
-        [HtmlAttributeName("value")]
         public int Value { get; set; }
-        
-        [HtmlAttributeName("no-background")]
-        public bool HasNoBackground { get; set; }
-
-        [HtmlAttributeName("overlap")]
-        public bool HasOverlap { get; set; }
-
-        [HtmlAttributeName("icon")]
-        public bool IsIcon { get; set; }
-
-        [HtmlAttributeName("href")]
         public string Href { get; set; }
-
+        public bool NoBackground { get; set; }
+        public bool Overlap { get; set; }
+        public bool Icon { get; set; }
+        
         public BadgeTagHelper ()
         {
-            HasNoBackground = false;
-            HasOverlap = false;
-            IsIcon = false;
+            NoBackground = false;
+            Overlap = false;
+            Icon = false;
             Href = "";
         }
 
-        public override async void Process(TagHelperContext context, TagHelperOutput output)
+        public override void GenerateOutput(TagHelperOutput output, string content)
         {
-            var content = await output.InnerContent();
-
             // Switch the tag if they have an Icon, Link or Other. 
             if(String.IsNullOrEmpty(Href)) {
-                if(IsIcon) {
+                if(Icon) {
                     output.TagName = "div";
                 } else {
                     output.TagName = "span";
@@ -47,19 +36,18 @@ namespace MDL.TagHelpers.Badges
 
             }
 
-            if(IsIcon) {
+            if(Icon) {
                 output.AddMaterialIconClass();
             }
 
-            if(HasNoBackground) {
+            if(NoBackground) {
                 output.AppendClass("mdl-badge--no-background");
             }
 
-            if(HasOverlap) {
+            if(Overlap) {
                 output.AppendClass("mdl-badge--overlap");
             }
             
-            output.AppendClass("mdl-badge");
             output.Attributes.SetAttribute("data-badge", Value);
             output.Content.SetContent(content);
         }

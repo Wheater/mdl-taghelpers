@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 namespace MDL.TagHelpers.Sliders
 {
     [HtmlTargetElement("mdl-slider")]
-    public class SliderTagHelper : TagHelper
+    [Mdl("input","mdl-slider", "mdl-js-slider")]
+    public class SliderTagHelper : BaseTagHelper
     {
         public int Min { get; set; }
         public int Max { get; set; }
@@ -24,15 +25,9 @@ namespace MDL.TagHelpers.Sliders
             Step = 1;
         }
 
-        public override async void Process(TagHelperContext context, TagHelperOutput output)
+        public override void GenerateOutput(TagHelperOutput output, string content)
         {
-            var content = await output.InnerContent();
             var id = TagHelperOutputExtensions.UniqueId();
-            output.TagName = "input";
-            
-            output.AppendClass("mdl-slider");
-            output.AppendClass("mdl-js-slider");
-
             output.Attributes.SetAttribute("type", "range");
 
             //TODO : Add validation
@@ -45,7 +40,3 @@ namespace MDL.TagHelpers.Sliders
         }
     }
 }
-
-/*
- <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
-     */

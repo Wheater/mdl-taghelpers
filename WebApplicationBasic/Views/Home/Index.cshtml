@@ -1,54 +1,75 @@
 @{
     ViewData["Title"] = "Demo Page";
 }
-<div style="width:300px;">
-    <mdl-loading>
-        this.MaterialProgress.setProgress(44);
-        this.MaterialProgress.setBuffer(87);
-    </mdl-loading>
+
+<div style="padding:50px;">
+    <mdl-h1 class="my-custom-class">Light 112sp</mdl-h1>
+    <mdl-h2>Regular 56sp</mdl-h2>
+    <mdl-h3>Regular 45sp</mdl-h3>
+    <mdl-h4>Regular 34sp</mdl-h4>
+    <mdl-headline>Regular 24sp</mdl-headline>
+    <mdl-title>Regular 20sp</mdl-title>
 </div>
+
 @*
-    <div style="padding: 50px;">
-        <mdl-toggle-checkbox ripple="true">TESTING 1</mdl-toggle-checkbox>
-        <mdl-toggle-checkbox ripple="false">TESTING 2</mdl-toggle-checkbox>
-        <mdl-toggle-checkbox ripple="true">TESTING 3</mdl-toggle-checkbox>
-        <mdl-toggle-checkbox ripple="true">TESTING 4</mdl-toggle-checkbox>
-    </div>
+    <mdl-list>
+        <mdl-list-item>
+            <mdl-list-item-content>Test</mdl-list-item-content>
+            <mdl-list-item-action>test</mdl-list-item-action>
 
-    <div style="padding:50px;">
-        <mdl-toggle-radio name="same">Same Test 1</mdl-toggle-radio>
-        <mdl-toggle-radio name="same">Same Test 2</mdl-toggle-radio>
-        <mdl-toggle-radio name="same">Same Test 3 </mdl-toggle-radio>
-        <mdl-toggle-radio name="same">Same Test 4</mdl-toggle-radio>
-
-    </div>
-
-    <div style="padding:50px;">
-        <mdl-toggle-icon>format_bold</mdl-toggle-icon>
-        <mdl-toggle-icon>account_box</mdl-toggle-icon>
-
-    </div>
+        </mdl-list-item>
+    </mdl-list>
 
 
-        <!-- Typography -->
-        <div style="padding:50px;">
-            <mdl-h1 class="my-custom-class">Light 112sp</mdl-h1>
-            <mdl-h2>Regular 56sp</mdl-h2>
-            <mdl-h3>Regular 45sp</mdl-h3>
-            <mdl-h4>Regular 34sp</mdl-h4>
-            <mdl-headline>Regular 24sp</mdl-headline>
-            <mdl-title>Regular 20sp</mdl-title>
-        </div>
-        <!-- Badges -->
-        <mdl-badge value="4" icon="true" href="http://google.com" >account_box</mdl-badge>
 
-        <!-- Button -->
-        <mdl-button mini="true" icon="true" accent="true" ripple="true" raised="true">account_box</mdl-button>
-        <mdl-button mini="true"  accent="true" ripple="false">account_box</mdl-button>
+            <div style="width:300px;">
+                <mdl-loading>
+                    this.MaterialProgress.setProgress(44);
+                    this.MaterialProgress.setBuffer(87);
+                </mdl-loading>
+            </div>
 
-        <!-- Tooltip -->
-        <mdl-button id="test">Test Button</mdl-button>
-        <mdl-tooltip right="true" for="test">TESTING</mdl-tooltip>
+            <div style="padding: 50px;">
+                <mdl-toggle-checkbox ripple="true">TESTING 1</mdl-toggle-checkbox>
+                <mdl-toggle-checkbox ripple="false">TESTING 2</mdl-toggle-checkbox>
+                <mdl-toggle-checkbox ripple="true">TESTING 3</mdl-toggle-checkbox>
+                <mdl-toggle-checkbox ripple="true">TESTING 4</mdl-toggle-checkbox>
+            </div>
+
+            <div style="padding:50px;">
+                <mdl-toggle-radio name="same">Same Test 1</mdl-toggle-radio>
+                <mdl-toggle-radio name="same">Same Test 2</mdl-toggle-radio>
+                <mdl-toggle-radio name="same">Same Test 3 </mdl-toggle-radio>
+                <mdl-toggle-radio name="same">Same Test 4</mdl-toggle-radio>
+
+            </div>
+
+            <div style="padding:50px;">
+                <mdl-toggle-icon>format_bold</mdl-toggle-icon>
+                <mdl-toggle-icon>account_box</mdl-toggle-icon>
+
+            </div>
+
+
+                <!-- Typography -->
+                <div style="padding:50px;">
+                    <mdl-h1 class="my-custom-class">Light 112sp</mdl-h1>
+                    <mdl-h2>Regular 56sp</mdl-h2>
+                    <mdl-h3>Regular 45sp</mdl-h3>
+                    <mdl-h4>Regular 34sp</mdl-h4>
+                    <mdl-headline>Regular 24sp</mdl-headline>
+                    <mdl-title>Regular 20sp</mdl-title>
+                </div>
+                <!-- Badges -->
+                <mdl-badge value="4" icon="true" href="http://google.com" >account_box</mdl-badge>
+
+                <!-- Button -->
+                <mdl-button mini="true" icon="true" accent="true" ripple="true" raised="true">account_box</mdl-button>
+                <mdl-button mini="true"  accent="true" ripple="false">account_box</mdl-button>
+
+                <!-- Tooltip -->
+                <mdl-button id="test">Test Button</mdl-button>
+                <mdl-tooltip right="true" for="test">TESTING</mdl-tooltip>
 *@
 
 @section scripts {

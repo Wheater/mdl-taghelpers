@@ -6,7 +6,8 @@ using System;
 namespace MDL.TagHelpers.Toggles
 {
     [HtmlTargetElement("mdl-toggle-checkbox")] 
-    public class CheckboxTagHelper : TagHelper, HasRipple
+    [Mdl("label", "mdl-checkbox", "mdl-js-checkbox")]
+    public class CheckboxTagHelper : BaseTagHelper
     {
         public bool Ripple {get; set;}
 
@@ -15,16 +16,11 @@ namespace MDL.TagHelpers.Toggles
             Ripple = true;
         }
 
-        public override async void Process(TagHelperContext context, TagHelperOutput output)
+        public override void GenerateOutput(TagHelperOutput output, string content)
         {
-            var content = await output.InnerContent();
             var id = TagHelperOutputExtensions.UniqueId();
-            output.TagName = "label";
             output.Attributes.SetAttribute("for", id);
-
-            output.AppendClass("mdl-checkbox");
-            output.AppendClass("mdl-js-checkbox");
- 
+            
             if(Ripple) {
                  output.AppendClass("mdl-js-ripple-effect");  
             }
@@ -32,10 +28,13 @@ namespace MDL.TagHelpers.Toggles
             output.Content.AppendHtml($"<input type=\"checkbox\" id=\"{id}\" class=\"mdl-checkbox__input\"/>");
             output.Content.AppendHtml($"<span class=\"mdl-checkbox__label\">{content}</span>");
         }
+
+        
     }
 
     [HtmlTargetElement("mdl-toggle-radio")]
-    public class RadioTagHelper : TagHelper, HasRipple
+    [Mdl("label", "mdl-radio", "mdl-js-radio")]
+    public class RadioTagHelper : BaseTagHelper
     {
         public bool Ripple { get; set; }
         public string Name { get; set; }
@@ -48,17 +47,12 @@ namespace MDL.TagHelpers.Toggles
             Checked = false;
         }
 
-        public override async void Process(TagHelperContext context, TagHelperOutput output)
+        public override void GenerateOutput(TagHelperOutput output, string content)
         {
-            var content = await output.InnerContent();
             var id = TagHelperOutputExtensions.UniqueId();
             var checkedAttr = Checked ? "checked" : String.Empty;
-            output.TagName = "label";
             output.Attributes.SetAttribute("for", id);
-
-            output.AppendClass("mdl-radio ");
-            output.AppendClass("mdl-js-radio");
-
+            
             if (Ripple)
             {
                 output.AppendClass("mdl-js-ripple-effect");
@@ -71,28 +65,24 @@ namespace MDL.TagHelpers.Toggles
 
 
     [HtmlTargetElement("mdl-toggle-icon")]
-    public class IconToggleTagHelper : TagHelper, HasRipple
+    [Mdl("label", "mdl-icon-toggle", "mdl-js-icon-toggle")]
+    public class IconToggleTagHelper : BaseTagHelper
     {
         public bool Ripple { get; set; }
         public bool Checked { get; set; }
-
+        
         public IconToggleTagHelper()
         {
             Ripple = true;
             Checked = false;
         }
 
-        public override async void Process(TagHelperContext context, TagHelperOutput output)
+        public override void GenerateOutput(TagHelperOutput output, string content)
         {
-            var content = await output.InnerContent();
             var id = TagHelperOutputExtensions.UniqueId();
             var checkedAttr = Checked ? "checked" : String.Empty;
-            output.TagName = "label";
             output.Attributes.SetAttribute("for", id);
-
-            output.AppendClass("mdl-icon-toggle");
-            output.AppendClass("mdl-js-icon-toggle");
-
+            
             if (Ripple)
             {
                 output.AppendClass("mdl-js-ripple-effect");

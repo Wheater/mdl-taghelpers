@@ -7,8 +7,9 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace MDL.TagHelpers.Loading
 {
-    [HtmlTargetElement("mdl-loading")]
-    public class LoadingTagHelper : TagHelper
+    [HtmlTargetElement(LOADING)]
+    [Mdl("div", true, "mdl-progress", "mdl-js-progress")]
+    public class LoadingTagHelper : BaseTagHelper
     {
         public bool Intermediate { get; set; }
 
@@ -17,38 +18,20 @@ namespace MDL.TagHelpers.Loading
             Intermediate = false;
         }
 
-        public override async void Process(TagHelperContext context, TagHelperOutput output)
+        public override void GenerateOutput(TagHelperOutput output, string content)
         {
-            var content = await output.InnerContent();
             output.Content.Reinitialize();
-            output.TagName = "div";
-
-            output.AppendClass("mdl-progress");
-            output.AppendClass("mdl-js-progress");
 
             if(Intermediate)
             {
                 output.AppendClass("mdl-progress__indeterminate");
-
             }
-
-            var id = output.SetId();
+            
             output.Content.SetContent("");
 
-            output.PostElement.AppendHtml($"<script type='text/javascript'>document.querySelector('#{id}').addEventListener('mdl-componentupgraded', function() {{"+
+            output.PostElement.AppendHtml($"<script type='text/javascript'>document.querySelector('#{Id}').addEventListener('mdl-componentupgraded', function() {{"+
                content
                 + "});</script>");
         }
     }
 }
-
-/*
- * 
- * <div id="p1" class="mdl-progress mdl-js-progress"></div>
-<script>
-  document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
-    this.MaterialProgress.setProgress(44);
-  });
-</script>
- * 
- */

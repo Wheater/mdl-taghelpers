@@ -5,7 +5,8 @@ using System;
 namespace MDL.TagHelpers.Buttons
 {
     [HtmlTargetElement("mdl-button")] 
-    public class ButtonTagHelper : TagHelper, HasRipple
+    [Mdl("button", "mdl-button", "mdl-js-button")]
+    public class ButtonTagHelper : BaseTagHelper
     {
         public bool Raised { get; set; }
         public bool Fab { get; set; }
@@ -22,43 +23,49 @@ namespace MDL.TagHelpers.Buttons
             Ripple = false;
         }
 
-        public override async void Process(TagHelperContext context, TagHelperOutput output)
-        {
-            var content = await output.InnerContent();
 
-            // Switch the tag if they have an Icon, Link or Other. 
-            output.TagName = "button";
-            
-            if(Raised) {
+        public override async void GenerateOutput(TagHelperOutput output, string content)
+        {
+            if (Raised)
+            {
                 output.AppendClass("mdl-button--raised");
-            } else if(Fab) {
+            }
+            else if (Fab)
+            {
                 output.AppendClass("mdl-button--fab");
-            } else if(Mini) {
+            }
+            else if (Mini)
+            {
                 output.AppendClass("mdl-button--mini-fab");
             }
 
-            if(Colored) {
+            if (Colored)
+            {
                 output.AppendClass("mdl-button--colored");
-            } else if(Primary) {
+            }
+            else if (Primary)
+            {
                 output.AppendClass("mdl-button--primary");
-            } else if(Accent) {
+            }
+            else if (Accent)
+            {
                 output.AppendClass("mdl-button--accent");
             }
 
-            if(Ripple) {
+            if (Ripple)
+            {
                 output.AppendClass("mdl-js-ripple-effect");
-            } 
-
-            output.PrependClass("mdl-js-button");
-            output.PrependClass("mdl-button");
-
-            if(Icon) {
+            }
+            
+            if (Icon)
+            {
                 output.AppendClass("mdl-button--icon");
                 output.Content.SetHtmlContent(
-                    "<i class=\"material-icons\">"+content+"</i>"
+                    "<i class=\"material-icons\">" + content + "</i>"
                 );
             }
-            else {
+            else
+            {
                 output.Content.SetContent(content);
             }
 

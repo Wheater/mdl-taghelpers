@@ -4,8 +4,9 @@ using System;
 
 namespace MDL.TagHelpers.Tooltips
 {
-    [HtmlTargetElement("mdl-tooltip")] 
-    public class TooltipTagHelper : TagHelper
+    [HtmlTargetElement(TOOLTIP)] 
+    [Mdl("div","mdl-tooltip")]
+    public class TooltipTagHelper : BaseTagHelper
     {
         public bool Large { get; set; }
         public bool MdlId { get; set; }
@@ -20,37 +21,35 @@ namespace MDL.TagHelpers.Tooltips
             Large = false;
         }
 
-        public override async void Process(TagHelperContext context, TagHelperOutput output)
+        public override void GenerateOutput(TagHelperOutput output, string content)
         {
-            var content = await output.InnerContent();
-
-            // Switch the tag if they have an Icon, Link or Other. 
-            output.TagName = "div";
-            
-            if(Large) {
+            if (Large)
+            {
                 output.AppendClass("mdl-tooltip--large");
             }
 
-            if(Left) {
+            if (Left)
+            {
                 output.AppendClass("mdl-tooltip--left");
             }
 
-            if(Right) {
+            if (Right)
+            {
                 output.AppendClass("mdl-tooltip--right");
             }
 
-            if(Top) {
+            if (Top)
+            {
                 output.AppendClass("mdl-tooltip--top");
             }
-            
-            if(Bottom) {
+
+            if (Bottom)
+            {
                 output.AppendClass("mdl-tooltip--bottom");
             }
-                
-            output.PrependClass("mdl-tooltip");
-
+            
             output.Content.SetContent(content);
-
         }
+        
     }
 }
