@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "NETStandard.Library": "1.6.0",
+    "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.1",
     "Microsoft.AspNetCore.Mvc.TagHelpers": "1.0.1",
     "Microsoft.AspNetCore.Mvc": "1.0.0"
   },

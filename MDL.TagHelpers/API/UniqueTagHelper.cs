@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using MDL.TagHelpers.API;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace MDL.TagHelpers
+namespace MDL.TagHelpers.API
 {
     public abstract class UniqueTagHelper : TagHelper
     {

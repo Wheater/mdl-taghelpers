@@ -49,6 +49,7 @@ namespace MDL.TagHelpers.API
             output.Attributes.SetAttribute("id",id);
             return id;
         }
+        
 
         public static string UniqueId()
         {

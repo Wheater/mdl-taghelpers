@@ -2,75 +2,36 @@
     ViewData["Title"] = "Demo Page";
 }
 
-<div style="padding:50px;">
-    <mdl-h1 class="my-custom-class">Light 112sp</mdl-h1>
-    <mdl-h2>Regular 56sp</mdl-h2>
-    <mdl-h3>Regular 45sp</mdl-h3>
-    <mdl-h4>Regular 34sp</mdl-h4>
-    <mdl-headline>Regular 24sp</mdl-headline>
-    <mdl-title>Regular 20sp</mdl-title>
-</div>
 
-@*
-    <mdl-list>
-        <mdl-list-item>
-            <mdl-list-item-content>Test</mdl-list-item-content>
-            <mdl-list-item-action>test</mdl-list-item-action>
-
-        </mdl-list-item>
-    </mdl-list>
-
-
-
-            <div style="width:300px;">
-                <mdl-loading>
-                    this.MaterialProgress.setProgress(44);
-                    this.MaterialProgress.setBuffer(87);
-                </mdl-loading>
-            </div>
-
-            <div style="padding: 50px;">
-                <mdl-toggle-checkbox ripple="true">TESTING 1</mdl-toggle-checkbox>
-                <mdl-toggle-checkbox ripple="false">TESTING 2</mdl-toggle-checkbox>
-                <mdl-toggle-checkbox ripple="true">TESTING 3</mdl-toggle-checkbox>
-                <mdl-toggle-checkbox ripple="true">TESTING 4</mdl-toggle-checkbox>
-            </div>
-
-            <div style="padding:50px;">
-                <mdl-toggle-radio name="same">Same Test 1</mdl-toggle-radio>
-                <mdl-toggle-radio name="same">Same Test 2</mdl-toggle-radio>
-                <mdl-toggle-radio name="same">Same Test 3 </mdl-toggle-radio>
-                <mdl-toggle-radio name="same">Same Test 4</mdl-toggle-radio>
-
-            </div>
-
-            <div style="padding:50px;">
-                <mdl-toggle-icon>format_bold</mdl-toggle-icon>
-                <mdl-toggle-icon>account_box</mdl-toggle-icon>
-
-            </div>
-
-
-                <!-- Typography -->
-                <div style="padding:50px;">
-                    <mdl-h1 class="my-custom-class">Light 112sp</mdl-h1>
-                    <mdl-h2>Regular 56sp</mdl-h2>
-                    <mdl-h3>Regular 45sp</mdl-h3>
-                    <mdl-h4>Regular 34sp</mdl-h4>
-                    <mdl-headline>Regular 24sp</mdl-headline>
-                    <mdl-title>Regular 20sp</mdl-title>
-                </div>
-                <!-- Badges -->
-                <mdl-badge value="4" icon="true" href="http://google.com" >account_box</mdl-badge>
-
-                <!-- Button -->
-                <mdl-button mini="true" icon="true" accent="true" ripple="true" raised="true">account_box</mdl-button>
-                <mdl-button mini="true"  accent="true" ripple="false">account_box</mdl-button>
-
-                <!-- Tooltip -->
-                <mdl-button id="test">Test Button</mdl-button>
-                <mdl-tooltip right="true" for="test">TESTING</mdl-tooltip>
-*@
-
-@section scripts {
-}
+<mdl-tab-layout >
+    <mdl-tab-layout-bar >
+        <mdl-tab-layout-link for="badge-tab" active="true">Badges</mdl-tab-layout-link>
+        <mdl-tab-layout-link for="buttons-tab">Buttons</mdl-tab-layout-link>
+        <mdl-tab-layout-link for="cards-tab">Cards</mdl-tab-layout-link>
+        <mdl-tab-layout-link for="chips-tab">Chips</mdl-tab-layout-link>
+        <mdl-tab-layout-link for="dialogs-tab">Dialogs</mdl-tab-layout-link>
+        <mdl-tab-layout-link for="lists-tab">Lists</mdl-tab-layout-link>
+        <mdl-tab-layout-link for="loading-tab">Loading</mdl-tab-layout-link>
+        <mdl-tab-layout-link for="menus-tab">Menus</mdl-tab-layout-link>
+        <mdl-tab-layout-link for="sliders-tab">Sliders</mdl-tab-layout-link>
+        <mdl-tab-layout-link for="snackbars-tab">Snackbars</mdl-tab-layout-link>
+        <mdl-tab-layout-link for="textfields-tab">TextFields</mdl-tab-layout-link>
+        <mdl-tab-layout-link for="toggles-tab">Toggles</mdl-tab-layout-link>
+        <mdl-tab-layout-link for="tooltips-tab">Tooltips</mdl-tab-layout-link>
+        <mdl-tab-layout-link for="typography-tab">Typography</mdl-tab-layout-link>
+    </mdl-tab-layout-bar>
+    <mdl-tab-layout-content id="badge-tab" active="true">test</mdl-tab-layout-content>
+    <mdl-tab-layout-content id="buttons-tab">test 2</mdl-tab-layout-content>
+    <mdl-tab-layout-content id="cards-tab">test 3</mdl-tab-layout-content>
+    <mdl-tab-layout-content id="chips-tab">test 4</mdl-tab-layout-content>
+    <mdl-tab-layout-content id="dialogs-tab">test 5</mdl-tab-layout-content>
+    <mdl-tab-layout-content id="lists-tab">test 6</mdl-tab-layout-content>
+    <mdl-tab-layout-content id="loading-tab">test 7</mdl-tab-layout-content>
+    <mdl-tab-layout-content id="menus-tab">test 8</mdl-tab-layout-content>
+    <mdl-tab-layout-content id="sliders-tab">test 9</mdl-tab-layout-content>
+    <mdl-tab-layout-content id="snackbars-tab">test 10</mdl-tab-layout-content>
+    <mdl-tab-layout-content id="textfields-tab">test 11</mdl-tab-layout-content>
+    <mdl-tab-layout-content id="toggles-tab">test 12</mdl-tab-layout-content>
+    <mdl-tab-layout-content id="tooltips-tab">test 13</mdl-tab-layout-content>
+    <mdl-tab-layout-content id="typography-tab">test 14</mdl-tab-layout-content>
+</mdl-tab-layout>

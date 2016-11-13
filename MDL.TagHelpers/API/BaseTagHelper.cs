@@ -4,28 +4,46 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Reflection;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MDL.TagHelpers.API
 {
     public abstract class BaseTagHelper : TagHelper
     {
-        public string[] Classes { get; set; }
-        public string TagName { get; set; }
+
+        protected string[] Classes { get; set; }
+        protected string TagName { get; set; }
         private bool GenerateUniqueId { get; set; }
-        public string Id { get; set; }
+        protected string Id { get; set; }
+        protected IDictionary<object, object> Items;
+
+        // Screen toggles
+        public bool LargeScreenOnly { get; set; }
+        public bool SmallScreenOnly { get; set; }
 
         public abstract void GenerateOutput(TagHelperOutput output, string content);
 
         public override async void Process(TagHelperContext context, TagHelperOutput output)
         {
             output.TagName = TagName;
-            
+            Items = context.Items;
+
             foreach (var cssClass in Classes)
             {
                 output.AppendClass(cssClass);
             }
-            
-            if(GenerateUniqueId)
+
+            if (LargeScreenOnly)
+            {
+                output.AppendClass("mdl-layout--large-screen-only");
+            }
+
+            if (SmallScreenOnly)
+            {
+                output.AppendClass("mdl-layout--small-screen-only");
+            }
+
+            if (GenerateUniqueId)
             {
                 Id = output.SetId();
             }
@@ -64,6 +82,19 @@ namespace MDL.TagHelpers.API
         public const string HEADLINE = "mdl-headline";
         public const string TITLE = "mdl-title";
         public const string TOOLTIP = "mdl-tooltip";
-        
+
+        // layout
+        public const string LAYOUT = "mdl-layout";
+        public const string LAYOUT_HEADER = "mdl-layout-header";
+        public const string LAYOUT_DRAWER = "mdl-layout-drawer";
+        public const string LAYOUT_CONTENT = "mdl-layout-content";
+        public const string LAYOUT_CONTENT_LINK = "mdl-layout-link";
+
+        // Tab layout
+        public const string TAB = "mdl-tab-layout";
+        public const string TAB_BAR = "mdl-tab-layout-bar";
+        public const string TAB_BAR_LINK = "mdl-tab-layout-link";
+        public const string TAB_CONTENT = "mdl-tab-layout-content";
+        public const string TAB_CONTENT_DEFAULT = "mdl-tab-layout-default-content";
     }
 }
