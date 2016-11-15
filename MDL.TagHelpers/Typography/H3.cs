@@ -4,9 +4,10 @@ using System.Threading.Tasks;
 
 namespace MDL.TagHelpers.Typography
 {
-    [HtmlTargetElement(H2)]
-    [Mdl("h2", "mdl-typography--display-3")]
-    public class H2TagHelper : BaseTagHelper
+    [HtmlTargetElement(H3)]
+    [Mdl("h3")]
+    [Css("mdl-typography--display-2")]
+    public class H3 : BaseTagHelper
     {
         public override void GenerateOutput(TagHelperOutput output, string content)
         {

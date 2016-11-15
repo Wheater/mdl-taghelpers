@@ -8,7 +8,8 @@ using MDL.TagHelpers.API;
 namespace MDL.TagHelpers.Snackbars
 {
     [HtmlTargetElement(SNACKBAR)]
-    [Mdl("div", true, "mdl-snackbar", "mdl-js-snackbar")]
+    [Mdl("div", true)]
+    [Css("mdl-snackbar", "mdl-js-snackbar")]
     public class Snackbar : BaseTagHelper
     {
         public string Text { get; set; }

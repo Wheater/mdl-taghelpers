@@ -8,23 +8,15 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 namespace MDL.TagHelpers.Sliders
 {
     [HtmlTargetElement("mdl-slider")]
-    [Mdl("input","mdl-slider", "mdl-js-slider")]
-    public class SliderTagHelper : BaseTagHelper
+    [Mdl("input")]
+    [Css("mdl-slider", "mdl-js-slider")]
+    public class Slider : BaseTagHelper
     {
-        public int Min { get; set; }
-        public int Max { get; set; }
-        public int Value { get; set; }
-        public int Step { get; set; }
-        public int TabIndex { get; set; }
-
-        public SliderTagHelper()
-        {
-            Min = 0;
-            Max = 2;
-            Value = 1;
-            Step = 1;
-        }
-
+        public int Min { get; set; } = 0;
+        public int Max { get; set; } = 2;
+        public int Value { get; set; } = 1;
+        public int Step { get; set; } = 1;
+        
         public override void GenerateOutput(TagHelperOutput output, string content)
         {
             var id = TagHelperOutputExtensions.UniqueId();

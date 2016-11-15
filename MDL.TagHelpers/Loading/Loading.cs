@@ -8,12 +8,13 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 namespace MDL.TagHelpers.Loading
 {
     [HtmlTargetElement(LOADING)]
-    [Mdl("div", true, "mdl-progress", "mdl-js-progress")]
-    public class LoadingTagHelper : BaseTagHelper
+    [Mdl("div", true)]
+    [Css("mdl-progress", "mdl-js-progress")]
+    public class Loading : BaseTagHelper
     {
         public bool Intermediate { get; set; }
 
-        public LoadingTagHelper()
+        public Loading()
         {
             Intermediate = false;
         }

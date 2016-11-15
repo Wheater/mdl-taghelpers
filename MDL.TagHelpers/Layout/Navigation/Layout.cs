@@ -11,9 +11,10 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 namespace MDL.TagHelpers.Layout.Navigation
 {
     [HtmlTargetElement(LAYOUT)]
-    [Mdl("div", "mdl-layout", "mdl-js-layout")]
+    [Mdl("div")]
+    [Css("mdl-layout", "mdl-js-layout")]
     [RestrictChildren(LAYOUT_HEADER, LAYOUT_DRAWER, LAYOUT_CONTENT)]
-    public class LayoutTagHelper : BaseTagHelper
+    public class Layout : BaseTagHelper
     {
         public bool FixedDrawer { get; set; } = false;
         public bool NoDrawerButton { get; set; } = false;
@@ -38,9 +39,10 @@ namespace MDL.TagHelpers.Layout.Navigation
     }
 
     [HtmlTargetElement(LAYOUT_HEADER)]
-    [Mdl("header", "mdl-layout__header")]
+    [Mdl("header")]
+    [Css("mdl-layout__header")]
     [RestrictChildren(LAYOUT_CONTENT_LINK)]
-    public class LayoutHeaderTagHelper : BaseTagHelper
+    public class LayoutHeader : BaseTagHelper
     {
         public string Title { get; set; }
         public bool Spacer { get; set; } = true;
@@ -89,9 +91,10 @@ namespace MDL.TagHelpers.Layout.Navigation
     }
 
     [HtmlTargetElement(LAYOUT_DRAWER)]
-    [Mdl("div", "mdl-layout__drawer")]
+    [Mdl("div")]
+    [Css("mdl-layout__drawer")]
     [RestrictChildren(LAYOUT_CONTENT_LINK)]
-    public class LayoutDrawerTagHelper : BaseTagHelper
+    public class LayoutDrawer : BaseTagHelper
     {
         public string Title { get; set; }
         public override void GenerateOutput(TagHelperOutput output, string content)
@@ -103,8 +106,9 @@ namespace MDL.TagHelpers.Layout.Navigation
     }
 
     [HtmlTargetElement(LAYOUT_CONTENT)]
-    [Mdl("main", "mdl-layout__content")]
-    public class LayoutContentTagHelper : BaseTagHelper
+    [Mdl("main")]
+    [Css("mdl-layout__content")]
+    public class LayoutContent : BaseTagHelper
     {
         public override void GenerateOutput(TagHelperOutput output, string content)
         {
@@ -113,8 +117,9 @@ namespace MDL.TagHelpers.Layout.Navigation
     }
     
     [HtmlTargetElement(LAYOUT_CONTENT_LINK)]
-    [Mdl("a", "mdl-navigation__link")]
-    public class LayoutContentLinkTagHelper : BaseTagHelper
+    [Mdl("a")]
+    [Css("mdl-navigation__link")]
+    public class LayoutContentLink : BaseTagHelper
     {
         public string Href { get; set; }
         public override void GenerateOutput(TagHelperOutput output, string content)

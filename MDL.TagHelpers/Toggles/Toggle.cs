@@ -6,7 +6,8 @@ using System;
 namespace MDL.TagHelpers.Toggles
 {
     [HtmlTargetElement("mdl-toggle-checkbox")] 
-    [Mdl("label", "mdl-checkbox", "mdl-js-checkbox")]
+    [Mdl("label")]
+    [Css("mdl-checkbox", "mdl-js-checkbox")]
     public class CheckboxTagHelper : BaseTagHelper
     {
         public bool Ripple {get; set;}
@@ -33,7 +34,8 @@ namespace MDL.TagHelpers.Toggles
     }
 
     [HtmlTargetElement("mdl-toggle-radio")]
-    [Mdl("label", "mdl-radio", "mdl-js-radio")]
+    [Mdl("label")]
+    [Css("mdl-radio", "mdl-js-radio")]
     public class RadioTagHelper : BaseTagHelper
     {
         public bool Ripple { get; set; }
@@ -65,7 +67,8 @@ namespace MDL.TagHelpers.Toggles
 
 
     [HtmlTargetElement("mdl-toggle-icon")]
-    [Mdl("label", "mdl-icon-toggle", "mdl-js-icon-toggle")]
+    [Mdl("label")]
+    [Css("mdl-icon-toggle", "mdl-js-icon-toggle")]
     public class IconToggleTagHelper : BaseTagHelper
     {
         public bool Ripple { get; set; }

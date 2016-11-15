@@ -5,8 +5,9 @@ using System;
 namespace MDL.TagHelpers.Tooltips
 {
     [HtmlTargetElement(TOOLTIP)] 
-    [Mdl("div","mdl-tooltip")]
-    public class TooltipTagHelper : BaseTagHelper
+    [Mdl("div")]
+    [Css("mdl-tooltip")]
+    public class Tooltip : BaseTagHelper
     {
         public bool Large { get; set; }
         public bool MdlId { get; set; }
@@ -16,13 +17,14 @@ namespace MDL.TagHelpers.Tooltips
         public bool Top { get; set; }
         public bool Bottom { get; set; }
 
-        public TooltipTagHelper ()
+        public Tooltip ()
         {
             Large = false;
         }
 
         public override void GenerateOutput(TagHelperOutput output, string content)
         {
+            // Conditional CSS
             if (Large)
             {
                 output.AppendClass("mdl-tooltip--large");

@@ -8,9 +8,10 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 namespace MDL.TagHelpers.Layout.Tabs
 {
     [HtmlTargetElement(TAB)]
-    [Mdl("div", "mdl-tabs", "mdl-js-tabs" ,"mdl-js-ripple-effect")]
+    [Mdl("div")]
+    [Css("mdl-tabs", "mdl-js-tabs", "mdl-js-ripple-effect")]
     [RestrictChildren(TAB_BAR, TAB_CONTENT)]
-    public class TabTagHelper: BaseTagHelper
+    public class Tab: BaseTagHelper
     {
         public override void GenerateOutput(TagHelperOutput output, string content)
         {
@@ -20,9 +21,10 @@ namespace MDL.TagHelpers.Layout.Tabs
     }
 
     [HtmlTargetElement(TAB_BAR)]
-    [Mdl("div", "mdl-tabs__tab-bar")]
+    [Mdl("div")]
+    [Css("mdl-tabs", "mdl-tabs__tab-bar")]
     [RestrictChildren(TAB_BAR_LINK)]
-    public class TabBarTagHelper : BaseTagHelper
+    public class TabBar : BaseTagHelper
     {
         public override void GenerateOutput(TagHelperOutput output, string content)
         {
@@ -32,8 +34,9 @@ namespace MDL.TagHelpers.Layout.Tabs
     }
 
     [HtmlTargetElement(TAB_BAR_LINK)]
-    [Mdl("a","mdl-tabs__tab")]
-    public class TabBarLinkTagHelper : BaseTagHelper
+    [Mdl("a")]
+    [Css("mdl-tabs__tab")]
+    public class TabBarLink : BaseTagHelper
     {
         public bool Active { get; set; } = false;
         public string For { get; set; } 
@@ -56,8 +59,9 @@ namespace MDL.TagHelpers.Layout.Tabs
     }
 
     [HtmlTargetElement(TAB_CONTENT)]
-    [Mdl("div", true, "mdl-tabs__panel")]
-    public class TabContentTagHelper : BaseTagHelper
+    [Mdl("div", true)]
+    [Css("mdl-tabs__panel")]
+    public class TabContent : BaseTagHelper
     {
         public string Id { get; set; }
         public bool Active { get; set; } = false;

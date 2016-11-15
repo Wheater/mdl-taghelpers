@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace MDL.TagHelpers.Layout
 {
-    public class GridLayoutTagHelper : BaseTagHelper
+    public class GridLayout : BaseTagHelper
     {
         public override void GenerateOutput(TagHelperOutput output, string content)
         {

@@ -10,7 +10,7 @@ namespace MDL.TagHelpers.Lists
 {
     [RestrictChildren("mdl-list-item")]
     [HtmlTargetElement("mdl-list")]
-    public class ListTagHelper : UniqueTagHelper
+    public class List : UniqueTagHelper
     {
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
@@ -23,7 +23,7 @@ namespace MDL.TagHelpers.Lists
 
     [RestrictChildren("mdl-list-item-content", "mdl-list-item-action")]
     [HtmlTargetElement("mdl-list-item")]
-    public class ListItemTagHelper : UniqueTagHelper
+    public class ListItem : UniqueTagHelper
     {
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
@@ -34,7 +34,7 @@ namespace MDL.TagHelpers.Lists
     }
 
     [HtmlTargetElement("mdl-list-item-content")]
-    public class ListItemPrimaryContentTagHelper : UniqueTagHelper
+    public class ListItemPrimaryContent : UniqueTagHelper
     {
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
@@ -45,7 +45,7 @@ namespace MDL.TagHelpers.Lists
     }
 
     [HtmlTargetElement("mdl-list-item-action")]
-    public class ListItemSecondaryActionTagHelper : UniqueTagHelper
+    public class ListItemSecondaryAction : UniqueTagHelper
     {
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
@@ -56,7 +56,7 @@ namespace MDL.TagHelpers.Lists
     }
 
     [HtmlTargetElement("mdl-list-item-action-info")]
-    public class ListItemSecondaryActionInfoTagHelper : UniqueTagHelper
+    public class ListItemSecondaryActionInfo : UniqueTagHelper
     {
 
         public override void Process(TagHelperContext context, TagHelperOutput output)

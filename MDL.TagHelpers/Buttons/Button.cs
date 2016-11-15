@@ -5,26 +5,20 @@ using System;
 namespace MDL.TagHelpers.Buttons
 {
     [HtmlTargetElement("mdl-button")] 
-    [Mdl("button", "mdl-button", "mdl-js-button")]
-    public class ButtonTagHelper : BaseTagHelper
+    [Mdl("button")]
+    [Css("mdl-button", "mdl-js-button")]
+    public class Button : BaseTagHelper
     {
-        public bool Raised { get; set; }
-        public bool Fab { get; set; }
-        public bool Mini { get; set; }
+        public bool Raised { get; set; } = false;
+        public bool Fab { get; set; } = false;
+        public bool Mini { get; set; } = false;
         public bool Icon { get; set; }
         public bool Colored { get; set; }
         public bool Primary { get; set; }
         public bool Accent{ get; set; }
-        public bool Ripple { get; set; }
-
-        public ButtonTagHelper ()
-        {
-            Raised = false;
-            Ripple = false;
-        }
-
-
-        public override async void GenerateOutput(TagHelperOutput output, string content)
+        public bool Ripple { get; set; } = false;
+        
+        public override void GenerateOutput(TagHelperOutput output, string content)
         {
             if (Raised)
             {
@@ -56,7 +50,7 @@ namespace MDL.TagHelpers.Buttons
             {
                 output.AppendClass("mdl-js-ripple-effect");
             }
-            
+
             if (Icon)
             {
                 output.AppendClass("mdl-button--icon");

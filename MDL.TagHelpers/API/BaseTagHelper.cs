@@ -10,7 +10,6 @@ namespace MDL.TagHelpers.API
 {
     public abstract class BaseTagHelper : TagHelper
     {
-
         protected string[] Classes { get; set; }
         protected string TagName { get; set; }
         private bool GenerateUniqueId { get; set; }
@@ -57,10 +56,12 @@ namespace MDL.TagHelpers.API
         public override void Init(TagHelperContext context)
         {
             // Get the css classes
-            var cssAttributes = (MdlAttribute) this.GetType().GetTypeInfo().GetCustomAttribute(typeof(MdlAttribute));
-            Classes = cssAttributes.Classes;
-            TagName = cssAttributes.TagName;
-            GenerateUniqueId = cssAttributes.GenerateUniqueId;
+            var mdlAttributes = (MdlAttribute)this.GetType().GetTypeInfo().GetCustomAttribute(typeof(MdlAttribute));
+            var cssAttributes = (CssAttribute)this.GetType().GetTypeInfo().GetCustomAttribute(typeof(CssAttribute));
+
+            Classes = (cssAttributes != null) ? cssAttributes.Classes: new string[] { };
+            TagName = (mdlAttributes != null) ? mdlAttributes.TagName: "";
+            GenerateUniqueId = (mdlAttributes != null)? mdlAttributes.GenerateUniqueId : false;
 
             base.Init(context);
         }
@@ -96,5 +97,13 @@ namespace MDL.TagHelpers.API
         public const string TAB_BAR_LINK = "mdl-tab-layout-link";
         public const string TAB_CONTENT = "mdl-tab-layout-content";
         public const string TAB_CONTENT_DEFAULT = "mdl-tab-layout-default-content";
+
+        // Chips
+
+        public const string CHIP = "mdl-chip";
+        public const string CHIP_BUTTON = "mdl-chip-button";
+        public const string CHIP_DELETABLE = "mdl-chip-button-deletable";
+        public const string CHIP_CONTACT = "mdl-chip-contact";
+
     }
 }

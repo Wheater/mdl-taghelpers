@@ -8,21 +8,18 @@ namespace MDL.TagHelpers.API
     [AttributeUsage(AttributeTargets.Class)]
     public class MdlAttribute : Attribute
     {
-        public MdlAttribute(string tag, bool generateUniqueId = false, params string[] classes)
+        public MdlAttribute(string tag)
         {
-            Classes = classes;
-            TagName = tag;
-            GenerateUniqueId = generateUniqueId;
-        }
-
-        public MdlAttribute(string tag, params string[] classes)
-        {
-            Classes = classes;
             TagName = tag;
             GenerateUniqueId = false;
         }
 
-        public string[] Classes { get; set; }
+        public MdlAttribute(string tag, bool generateUniqueId = false)
+        {
+            TagName = tag;
+            GenerateUniqueId = generateUniqueId;
+        }
+        
         public string TagName { get; set; }
         public bool GenerateUniqueId { get; set; }
     }

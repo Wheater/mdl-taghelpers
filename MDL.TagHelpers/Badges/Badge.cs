@@ -4,23 +4,16 @@ using System;
 
 namespace MDL.TagHelpers.Badges
 {
-    [HtmlTargetElement("mdl-badge")] 
-    public class BadgeTagHelper : BaseTagHelper
+    [HtmlTargetElement("mdl-badge")]
+    [Css("mdl-badge")]
+    public class Badge : BaseTagHelper
     {
         public int Value { get; set; }
-        public string Href { get; set; }
-        public bool NoBackground { get; set; }
-        public bool Overlap { get; set; }
-        public bool Icon { get; set; }
+        public string Href { get; set; } = "";
+        public bool NoBackground { get; set; } = false;
+        public bool Overlap { get; set; } = false;
+        public bool Icon { get; set; } = false;
         
-        public BadgeTagHelper ()
-        {
-            NoBackground = false;
-            Overlap = false;
-            Icon = false;
-            Href = "";
-        }
-
         public override void GenerateOutput(TagHelperOutput output, string content)
         {
             // Switch the tag if they have an Icon, Link or Other. 
