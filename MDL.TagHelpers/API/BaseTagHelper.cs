@@ -105,5 +105,8 @@ namespace MDL.TagHelpers.API
         public const string CHIP_DELETABLE = "mdl-chip-button-deletable";
         public const string CHIP_CONTACT = "mdl-chip-contact";
 
+
+        public const string CARD = "mdl-card";
+
     }
 }
