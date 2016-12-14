@@ -17,7 +17,7 @@
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.1.0",
     "Microsoft.AspNetCore.Mvc.TagHelpers": "1.1.0",
-    "HurriKane.Material.Design": "1.0.0"
+    "HurriKane.Material.Design": "0.0.2-alpha"
   },
 
   "tools": {

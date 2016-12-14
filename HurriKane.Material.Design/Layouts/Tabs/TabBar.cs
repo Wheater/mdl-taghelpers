@@ -22,12 +22,12 @@ namespace HurriKane.Material.Design.Layouts.Tabs
     [RestrictChildren("tab-bar-item")]
     public class TabBar : BaseTag
     {
-        public override string[] CssClasses => new string[] { "mdl-layout__tab-bar" };
+        public override string[] CssClasses => new string[] { "mdl-tabs__tab-bar" };
     }
 
     public class TabBarItem : BaseTag
     {
-        public override string[] CssClasses => new string[] { "mdl-layout__tab" };
+        public override string[] CssClasses => new string[] { "mdl-tabs__tab" };
         public override string TagName => "a";
 
         public bool Active { get; set; } = false;
@@ -45,7 +45,7 @@ namespace HurriKane.Material.Design.Layouts.Tabs
 
     public class TabPanel : BaseTag
     {
-        public override string[] CssClasses => new string[] { "mdl-layout__tab-panel" };
+        public override string[] CssClasses => new string[] { "mdl-tabs__tab-panel" };
         public bool Active { get; set; } = false;
 
         public override string GenerateOutput(TagHelperOutput output, string content)
