@@ -1,21 +1,232 @@
 @{
     ViewData["Title"] = "Demo Page";
-    
+
 }
 
+<navigation-tab-panel id="tab1">
+    <badge class="material-icons" value="4">account_box</badge>
+    <badge value="4">Inbox</badge>
+</navigation-tab-panel>
+<navigation-tab-panel id="tab2">
+    <button fab="true" colored="true"><icon>add</icon></button>
+    <button fab="true" colored="true" ripple="true"><icon>add</icon></button>
+    <br /><br />
+    <button fab="true"><icon>add</icon></button>
+    <button fab="true" ripple="true"><icon>add</icon></button>
+    <button fab="true" disabled><icon>add</icon></button>
+    <br /><br />
+    <button raised="true">BUTTON</button>
+    <button raised="true" ripple="true">BUTTON</button>
+    <button raised="true" disabled>BUTTON</button>
+    <br /><br />
+    <button raised="true" colored="true">BUTTON</button>
+    <button raised="true" accent="true">BUTTON</button>
+    <button raised="true" accent="true" ripple="true">BUTTON</button>
+    <br /><br />
+    <button>BUTTON</button>
+    <button ripple="true">BUTTON</button>
+    <button disabled>BUTTON</button>
+    <br /><br />
+    <button primary="true">BUTTON</button>
+    <button accent="true">BUTTON</button>
+    <br /><br />
+    <button icon="true"><icon>mood</icon></button>
+    <button icon="true" colored="true"><icon>mood</icon></button>
+    <br /><br />
+    <button mini="true"><icon>add</icon></button>
+    <button mini="true" colored="true"><icon>add</icon></button>
+</navigation-tab-panel>
+<navigation-tab-panel id="tab3">
+    <card shadow-depth="2" class="demo-card-wide">
+        <card-title>
+            <card-title-text>Welcome</card-title-text>
+        </card-title>
+        <card-supportingtext>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Mauris sagittis pellentesque lacus eleifend lacinia...
+        </card-supportingtext>
+        <card-actions has-border="true">
+            <button-link colored="true" ripple="true">Get Started</button-link>
+        </card-actions>
+        <card-menu>
+            <button><icon>share</icon></button>
+        </card-menu>
+    </card>
 
+    <card shadow-depth="2" class="demo-card-square">
+        <card-title expand="true">
+            <card-title-text>Update</card-title-text>
+        </card-title>
+        <card-supportingtext>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Aenan convallis.
+        </card-supportingtext>
+        <card-actions has-border="true">
+            <button-link colored="true" ripple="true"> View Updates</button-link>
+        </card-actions>
+    </card>
 
-<navigation-tab-panel id="tab1"  active="true"></navigation-tab-panel>
-<navigation-tab-panel id="tab2"></navigation-tab-panel>
-<navigation-tab-panel id="tab3"></navigation-tab-panel>
-<navigation-tab-panel id="tab4"></navigation-tab-panel>
-<navigation-tab-panel id="tab5"></navigation-tab-panel>
-<navigation-tab-panel id="tab6"></navigation-tab-panel>
-<navigation-tab-panel id="tab7"></navigation-tab-panel>
+    <card shadow-depth="2" class="demo-card-image">
+        <card-title expand="true"></card-title>
+        <card-actions has-border="true">
+            <span class="demo-card-image__filename">Image.jpg</span>
+        </card-actions>
+    </card>
+
+    <card shadow-depth="2" class="demo-card-event">
+        <card-title expand="true">
+            <card-title-text heading-size="4">
+                Featured event:<br>
+                May 24, 2016<br>
+                7-11pm
+            </card-title-text>
+        </card-title>
+        <card-actions has-border="true">
+            <button-link colored="true" ripple="true">Add to Calendar</button-link>
+            <navigation-spacer></navigation-spacer>
+            <icon>event</icon>
+        </card-actions>
+    </card>
+
+</navigation-tab-panel>
+<navigation-tab-panel id="tab4">
+    <chip><chip-text>Basic Chip</chip-text></chip>
+    <chip deletable="true">
+        <chip-text>Deletable Chip</chip-text>
+        <chip-action-link><icon>cancel</icon></chip-action-link>
+    </chip>
+    <chip is-contact="true">
+        <chip-contact class="mdl-color--teal mdl-color-text--white">A</chip-contact>
+        <chip-text>Contact Chip</chip-text>
+    </chip>
+    <chip is-contact="true" deletable="true">
+        <img class="mdl-chip__contact" src="/images/user.jpg" />
+        <chip-text>Deletable Contact Chip</chip-text>
+        <chip-action-link href="#"><icon>cancel</icon></chip-action-link>
+    </chip>
+</navigation-tab-panel>
+<navigation-tab-panel id="tab5">
+
+    <tab-bar-container>
+        <tab-bar>
+            <tab-bar-item active="true" for-tab-panel-id="Starks">Starks</tab-bar-item>
+            <tab-bar-item for-tab-panel-id="Lannisters">Lannisters</tab-bar-item>
+            <tab-bar-item for-tab-panel-id="Targaryens">Targaryens</tab-bar-item>
+
+        </tab-bar>
+        <tab-panel id="Starks" active="true">
+            <ul>
+                <li>Eddard</li>
+                <li>Catelyn</li>
+                <li>Robb</li>
+                <li>Sansa</li>
+                <li>Brandon</li>
+                <li>Arya</li>
+                <li>Rickon</li>
+            </ul>
+        </tab-panel>
+        <tab-panel id="Lannisters" active="false">
+            <ul>
+                <li>Tywin</li>
+                <li>Cersei</li>
+                <li>Jamie</li>
+                <li>Tyrion</li>
+            </ul>
+        </tab-panel>
+        <tab-panel id="Targaryens" active="false">
+            <ul>
+                <li>Viserys</li>
+                <li>Daenerys</li>
+            </ul>
+        </tab-panel>
+    </tab-bar-container>
+
+    <br />
+
+    <footer>
+        <footer-left>
+            <footer-logo>Title</footer-logo>
+            <footer-link-list>
+                <footer-link-list-item><a href="#">Help</a></footer-link-list-item>
+                <footer-link-list-item><a href="#">Privacy & Terms</a></footer-link-list-item>
+            </footer-link-list>
+        </footer-left>
+    </footer>
+
+    <br />
+
+    <grid>
+        <grid-cell col-size="1">1</grid-cell>
+        <grid-cell col-size="1">1</grid-cell>
+        <grid-cell col-size="1">1</grid-cell>
+        <grid-cell col-size="1">1</grid-cell>
+        <grid-cell col-size="1">1</grid-cell>
+        <grid-cell col-size="1">1</grid-cell>
+        <grid-cell col-size="1">1</grid-cell>
+        <grid-cell col-size="1">1</grid-cell>
+        <grid-cell col-size="1">1</grid-cell>
+        <grid-cell col-size="1">1</grid-cell>
+        <grid-cell col-size="1">1</grid-cell>
+        <grid-cell col-size="1">1</grid-cell>
+    </grid>
+    <grid>
+        <grid-cell col-size="4">4</grid-cell>
+        <grid-cell col-size="4">4</grid-cell>
+        <grid-cell col-size="4">4</grid-cell>
+    </grid>
+
+    <grid>
+        <grid-cell col-size="6">6</grid-cell>
+        <grid-cell col-size="4">4</grid-cell>
+        <grid-cell col-size="2">2</grid-cell>
+    </grid>
+
+    <grid>
+        <grid-cell col-size="6" col-size-tablet="8">6 (8 tablet)</grid-cell>
+        <grid-cell col-size="4" col-size-tablet="6">4 (6 tablet)</grid-cell>
+        <grid-cell col-size="2" col-size-phone="4">2 (4 phone)</grid-cell>
+    </grid>
+
+</navigation-tab-panel>
+<navigation-tab-panel id="tab6">
+    <list>
+        <list-item></list-item>
+    </list>
+</navigation-tab-panel>
+<navigation-tab-panel id="tab7" >
+    <progress-bar>
+        this.MaterialProgress.setProgress(44);
+    </progress-bar>
+    <br />
+    <progress-bar indeterminate="true"></progress-bar>
+    <br />
+    <progress-bar>
+        this.MaterialProgress.setProgress(33);
+        this.MaterialProgress.setBuffer(87);
+    </progress-bar>
+    <br/>
+    <spinner active="true"></spinner>
+    <spinner active="true" single-color="true"></spinner>
+
+</navigation-tab-panel>
 <navigation-tab-panel id="tab8"></navigation-tab-panel>
 <navigation-tab-panel id="tab9"></navigation-tab-panel>
 <navigation-tab-panel id="tab10"></navigation-tab-panel>
 <navigation-tab-panel id="tab11"></navigation-tab-panel>
 <navigation-tab-panel id="tab12"></navigation-tab-panel>
 <navigation-tab-panel id="tab13"></navigation-tab-panel>
-<navigation-tab-panel id="tab14"></navigation-tab-panel>
+<navigation-tab-panel id="tab14">
+        <icon id="tt1">add</icon>
+        <tooltip for-id="tt1" direction="Bottom">Follow</tooltip>
+        <br />
+        <icon id="tt2">print</icon>
+        <tooltip for-id="tt2" direction="Left">Print</tooltip>
+        <br />
+        <icon id="tt3">cloud_upload</icon>
+        <tooltip for-id="tt3" direction="Right">Upload <strong>file.zip</strong></tooltip>
+        <br />
+        <icon id="tt4">add</icon>
+        <tooltip for-id="tt4" direction="Top">Share your content<br>via social media</tooltip>
+        <br />  
+    
+</navigation-tab-panel>

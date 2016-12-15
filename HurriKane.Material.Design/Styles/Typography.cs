@@ -2,6 +2,7 @@
 
 namespace HurriKane.Material.Design.Styles
 {
+    
     public class H1 : BaseTag
     {
         public override string[] CssClasses => new string[] { "mdl-typography--display-4" };
@@ -37,4 +38,5 @@ namespace HurriKane.Material.Design.Styles
         public override string[] CssClasses => new string[] { "mdl-typography--title" };
         public override string TagName => "h6";
     }
+    
 }

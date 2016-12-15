@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace HurriKane.Material.Design.Layouts.Tabs
 {
-    [RestrictChildren("tab-bar")]
+    [RestrictChildren("tab-bar", "tab-panel")]
     public class TabBarContainer : BaseTag
     {
         public override string[] CssClasses => new string[] { "mdl-tabs mdl-js-tabs" };
@@ -45,7 +45,7 @@ namespace HurriKane.Material.Design.Layouts.Tabs
 
     public class TabPanel : BaseTag
     {
-        public override string[] CssClasses => new string[] { "mdl-tabs__tab-panel" };
+        public override string[] CssClasses => new string[] { "mdl-tabs__panel" };
         public bool Active { get; set; } = false;
 
         public override string GenerateOutput(TagHelperOutput output, string content)

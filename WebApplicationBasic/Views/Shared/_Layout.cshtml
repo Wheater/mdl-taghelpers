@@ -19,6 +19,121 @@
     </environment>
 
     <script src="~/lib/material-design-lite/material.js" type="text/javascript"></script>
+
+    <style>
+        main {
+            padding: 15px;
+        }
+
+        .mdl-card {
+            margin-bottom: 20px;
+        }
+
+    </style>
+
+    <style>
+        .demo-card-wide.mdl-card {
+            width: 100%;
+            max-width: 512px;
+        }
+
+        .demo-card-wide > .mdl-card__title {
+            color: #fff;
+            height: 176px;
+            background: url('/images/welcome_card.jpg') center / cover;
+        }
+
+        .demo-card-wide > .mdl-card__menu {
+            color: #fff;
+        }
+    </style>
+
+    <!-- Square card -->
+    <style>
+        .demo-card-square.mdl-card {
+            width: 100%;
+            max-width: 512px;
+            height: 320px;
+        }
+
+        .demo-card-square > .mdl-card__title {
+            color: #fff;
+            background: url('/images/dog.png') bottom right 15% no-repeat #46B6AC;
+        }
+    </style>
+
+    <style>
+        .demo-card-image.mdl-card {
+            width: 256px;
+            height: 256px;
+            background: url('/images/image_card.jpg') center / cover;
+        }
+
+        .demo-card-image > .mdl-card__actions {
+            height: 52px;
+            padding: 16px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .demo-card-image__filename {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    </style>
+
+    <!-- Event card -->
+    <style>
+        .demo-card-event.mdl-card {
+            width: 256px;
+            height: 256px;
+            background: #3E4EB8;
+        }
+
+        .demo-card-event > .mdl-card__actions {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .demo-card-event > .mdl-card__title {
+            align-items: flex-start;
+        }
+
+            .demo-card-event > .mdl-card__title > h4 {
+                margin-top: 0;
+            }
+
+        .demo-card-event > .mdl-card__actions {
+            display: flex;
+            box-sizing: border-box;
+            align-items: center;
+        }
+
+            .demo-card-event > .mdl-card__actions > .material-icons {
+                padding-right: 10px;
+            }
+
+            .demo-card-event > .mdl-card__title,
+            .demo-card-event > .mdl-card__actions,
+            .demo-card-event > .mdl-card__actions > .mdl-button {
+                color: #fff;
+            }
+    </style>
+
+    <style>
+        .mdl-grid > .mdl-cell {
+            background-color: #BDBDBD;
+            height: 200px;
+            padding-left: 8px;
+            padding-top: 4px;
+            color: white;
+        }
+    </style>
+
+    <style>
+        section {
+            text-align:center
+        }
+    </style>
 </head>
 <body>
     <navigation fixed-header="true">
@@ -32,13 +147,13 @@
                 </navigation-link-list>
             </navigation-header-row>
             <navigation-header-tab-bar>
-                <navigation-header-tab-bar-item href="#tab1" active="true">Badges</navigation-header-tab-bar-item>
+                <navigation-header-tab-bar-item href="#tab1">Badges</navigation-header-tab-bar-item>
                 <navigation-header-tab-bar-item href="#tab2">Buttons</navigation-header-tab-bar-item>
                 <navigation-header-tab-bar-item href="#tab3">Cards</navigation-header-tab-bar-item>
                 <navigation-header-tab-bar-item href="#tab4">Chips</navigation-header-tab-bar-item>
-                <navigation-header-tab-bar-item href="#tab5">Dialogs</navigation-header-tab-bar-item>
+                <navigation-header-tab-bar-item href="#tab5">Layout</navigation-header-tab-bar-item>
                 <navigation-header-tab-bar-item href="#tab6">Lists</navigation-header-tab-bar-item>
-                <navigation-header-tab-bar-item href="#tab7">Loading</navigation-header-tab-bar-item>
+                <navigation-header-tab-bar-item href="#tab7" active="true">Loading</navigation-header-tab-bar-item>
                 <navigation-header-tab-bar-item href="#tab8">Menu</navigation-header-tab-bar-item>
                 <navigation-header-tab-bar-item href="#tab9">Sliders</navigation-header-tab-bar-item>
                 <navigation-header-tab-bar-item href="#tab10">Snackbar</navigation-header-tab-bar-item>
@@ -57,7 +172,6 @@
             <navigation-link-list>
                 <navigation-link-list-item href="/test"></navigation-link-list-item>
             </navigation-link-list>
-
         </navigation-drawer>
         <navigation-main>
             @RenderBody()

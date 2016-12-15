@@ -9,11 +9,14 @@ namespace HurriKane.Material.Design.Chips
     {
         public override string[] CssClasses => new string[] { "mdl-chip" };
         public bool Deletable { get; set; }
+        public bool IsContact { get; set; }
 
         public override string GenerateOutput(TagHelperOutput output, string content)
         {
             if (Deletable)
                 output.AppendCssClass("mdl-chip--deletable");
+            if (IsContact)
+                output.AppendCssClass("mdl-chip--contact");
             return content;
         }
     }

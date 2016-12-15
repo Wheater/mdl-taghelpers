@@ -12,14 +12,13 @@ namespace HurriKane.Material.Design.Api
         public virtual bool IgnoreId { get; } = true;
         public virtual bool IgnoreNullContent { get; } = false;
         protected string Id { get; set; }
-
+        
         public override async void Process(TagHelperContext context, TagHelperOutput output)
         {
             var _content = output.Content.IsModified ? output.Content.GetContent() : (await output.GetChildContentAsync()).GetContent();
-
             output.TagName = TagName;
 
-            Id = context.UniqueId;
+            Id = "mdl_"+context.UniqueId;
             if (!IgnoreId)
                 output.Attributes.SetAttribute("id", Id);
 
@@ -30,7 +29,11 @@ namespace HurriKane.Material.Design.Api
             if (!IgnoreNullContent)
             {
                 _modcontent = GenerateOutput(output, _content) ?? _content;
+            } else
+            {
+                GenerateOutput(output, _content); // should still get the chance to add classes etc even if content is not propagated. 
             }
+
 
             output.Content.SetHtmlContent(_modcontent);
 

@@ -43,4 +43,9 @@ namespace HurriKane.Material.Design.Buttons
             return content;
         }
     }
+
+    public class ButtonLink : Button
+    {
+        public override string TagName => "a";
+    }
 }
